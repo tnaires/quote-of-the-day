@@ -1,0 +1,15 @@
+{
+  "name": "voicebunny",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Application that integrates with VoiceBunny API to create a booking project.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "~4.16.0"
+  },
+  "author": "Tarso Aires",
+  "license": "ISC"
+}
