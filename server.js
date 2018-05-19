@@ -1,14 +1,13 @@
 const express = require('express');
+const ProjectsController = require('./controllers/projects');
 
-const CONTEXT = '/voicebunny/api';
+const CONTEXT = '/quote-of-the-day';
 const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-app.get(CONTEXT, (req, res) => {
-  res.status(200).send('OK');
-});
+app.post(`${CONTEXT}${ProjectsController.PATH}`, ProjectsController.newProject);
 
 app.listen(PORT, () => {
-  console.log(`VoiceBunny app listening on port ${PORT}`);
+  console.log(`quote-of-the-day app listening on port ${PORT}`);
 });

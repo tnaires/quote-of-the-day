@@ -1,8 +1,8 @@
 {
-  "name": "voicebunny",
+  "name": "quote-of-the-day",
   "version": "1.0.0",
   "private": true,
-  "description": "Application that integrates with VoiceBunny API to create a booking project.",
+  "description": "Application that integrates with VoiceBunny API to create a quote-of-the-day booking project.",
   "main": "index.js",
   "scripts": {
     "start": "node server.js"
