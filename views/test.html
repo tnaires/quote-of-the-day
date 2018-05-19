@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quote of the day</title>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous">
+    </script>
+  </head>
+  <body>
+    <h1>Quote of the day</h1>
+    <p>
+      Click the button below to create a new booking project through <a href="http://voicebunny.com/">VoiceBunny</a> with <a href="https://talaikis.com/api/quotes/random/">the quote of the day!</a>
+    </p>
+    <form action="/quote-of-the-day/project/new" id="testForm">
+      <input type="submit" value="Try!" />
+    </form>
+    <div id="results"></div>
+
+    <script>
+      $('#testForm').submit(function (event) {
+        event.preventDefault();
+
+        const $form = $(this);
+        const url = $form.attr('action');
+        const posting = $.post(url);
+
+        posting.done(function (data) {
+          console.log(data);
+          $('#results')
+            .append('<h2>Project created!</h2>')
+            .append(`<p>Project name: ${data.project.title}</p>`)
+            .append(`<p>Project script: ${data.project.script.part001}</p>`)
+            .append(`<audio controls><source src="${data.project.reads[0].urls.part001.original}" type="audio/wav">Audio element not supported</audio>`);
+        });
+      });
+    </script>
+  </body>
+</html>
