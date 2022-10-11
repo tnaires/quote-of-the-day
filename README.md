@@ -16,7 +16,3 @@ After that, run `npm start` and access the test page under http://localhost:3000
 
 * GET /quote-of-the-day/test - displays a test page.
 * POST /quote-of-the-day/project/new - fetches a quote of the day and uses it as a script to create a new project on VoiceBunny.
-
-## Links
-
-This application is deployed [on Heroku](https://boiling-tundra-82534.herokuapp.com/quote-of-the-day/test).
